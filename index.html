@@ -102,7 +102,7 @@ body::before {
   content: '';
   position: relative;
   inset: 0;
-  background-image: url(section.png);
+  background-image: url(sectiondesktop.png);
   opacity: var(100%);
   pointer-events: none;
   z-index: 9999;
@@ -323,23 +323,26 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
   position: relative;
   overflow: hidden;
   padding-top: var(--nav-h);
-  background-image: url(section.png);
-  background-size: auto 100%; /* A altura trava em 100% da tela e a largura se ajusta proporcionalmente */
-  background-position: right center; /* Fixa a arte no canto direito */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
   background-color: var(--bg-base);
+  
+  /* Imagem Desktop Padrão */
+  background-image: url("sectiondesktop.png");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
 }
 
 #hero .container {
-  max-width: 1440px; /* Aumente este valor se quiser empurrar o texto ainda mais para a esquerda */
+  max-width: 1440px;
   width: 100%;
+}
 
- } #hero::before {
+#hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url(section.png);
-  background-size: auto 100%;
+  background-image: url("sectiondesktop.png");
+  background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
   filter: brightness(1.2) saturate(1.4) contrast(1.1); 
@@ -350,29 +353,16 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
   position: absolute;
   inset: 0;
   background:
-    /* Gradiente vertical (mantido suave) */
     linear-gradient(180deg, rgba(5,7,15,0.1) 0%, rgba(5,7,15,0.4) 70%, var(--bg-base) 100%),
-    /* O SEGREDO ESTÁ AQUI: Começa 100% sólido na cor base, estende até os 40% (cobrindo a linha do corte) e só depois fica transparente */
     linear-gradient(90deg, var(--bg-base) 0%, var(--bg-base) 40%, rgba(5,7,15,0) 65%);
   pointer-events: none;
   z-index: 0;
-
 }
+
 [data-theme="light"] .hero-bg-overlay {
   background:
     linear-gradient(180deg, rgba(248,249,255,0.72) 0%, rgba(248,249,255,0.85) 55%, var(--bg-base) 100%),
     linear-gradient(90deg, rgba(248,249,255,0.94) 0%, rgba(248,249,255,0.55) 55%, rgba(248,249,255,0.25) 100%);
-}
-@media (max-width: 900px) {
-  #hero { background-position: center 20%; }
-  .hero-bg-overlay {
-    background:
-      linear-gradient(180deg, rgba(5,7,15,0.6) 0%, rgba(5,7,15,0.82) 45%, var(--bg-base) 100%);
-  }
-  [data-theme="light"] .hero-bg-overlay {
-    background:
-      linear-gradient(180deg, rgba(248,249,255,0.78) 0%, rgba(248,249,255,0.9) 45%, var(--bg-base) 100%);
-  }
 }
 
 .hero-glow {
@@ -384,7 +374,6 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
   z-index: 1;
 }
 
-/* Interactive cursor glow */
 .hero-cursor-glow {
   position: absolute;
   width: 600px; height: 600px;
@@ -436,6 +425,7 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
   text-transform: uppercase;
   margin-bottom: 1.8rem;
 }
+
 .hero-badge::before {
   content: '';
   width: 6px; height: 6px;
@@ -444,14 +434,11 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
   box-shadow: 0 0 8px var(--accent-cyan);
   animation: pulse-dot 2s infinite;
 }
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 4px var(--accent-cyan); }
-  50% { box-shadow: 0 0 12px var(--accent-cyan), 0 0 24px rgba(34,211,238,0.4); }
-}
 
 .hero-title {
   margin-bottom: 1.5rem;
 }
+
 .hero-title .line-serif {
   display: block;
   font-family: var(--font-serif);
@@ -475,6 +462,146 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+/* ── SCROLL HINT (Corrigido para ficar travado no centro da base) ── */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: float-scroll 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.hero-scroll-hint span {
+  color: #52a6ff;
+  animation: neonFlicker 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.hero-scroll-hint svg {
+  stroke: #52a6ff;
+  animation: neonFlickerIcon 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes float-scroll {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+@keyframes neonFlicker {
+  0%, 100% { text-shadow: 0 0 4px #52a6ff, 0 0 10px #52a6ff, 0 0 18px #1d6cff, 0 0 30px #1d6cff; opacity: 0.75; }
+  50% { text-shadow: 0 0 5px #52a6ff, 0 0 14px #52a6ff, 0 0 28px #1d6cff, 0 0 50px #1d6cff, 0 0 70px #1d6cff; opacity: 1; }
+}
+
+@keyframes neonFlickerIcon {
+  0%, 100% { opacity: 0.65; filter: drop-shadow(0 0 4px #1d6cff); }
+  50% { opacity: 1; filter: drop-shadow(0 0 9px #1d6cff); }
+}
+
+/* ═══════════════════════════════════════════
+   MEDIA QUERIES PARA ADAPTAÇÃO
+═══════════════════════════════════════════ */
+
+/* ── TABLET (Até 1024px) ── */
+@media (max-width: 1024px) {
+  #hero, #hero::before { 
+    background-image: url("sectiontablet.png");
+    background-position: center right; 
+  }
+  
+  .hero-bg-overlay {
+    background:
+      linear-gradient(180deg, rgba(5,7,15,0.3) 0%, rgba(5,7,15,0.7) 60%, var(--bg-base) 100%),
+      linear-gradient(90deg, var(--bg-base) 0%, rgba(5,7,15,0.85) 50%, rgba(5,7,15,0) 100%);
+  }
+  [data-theme="light"] .hero-bg-overlay {
+    background:
+      linear-gradient(180deg, rgba(248,249,255,0.6) 0%, rgba(248,249,255,0.9) 60%, var(--bg-base) 100%),
+      linear-gradient(90deg, rgba(248,249,255,0.95) 0%, rgba(248,249,255,0.75) 50%, rgba(248,249,255,0.1) 100%);
+  }
+  
+  .hero-content {
+    max-width: 500px;
+  }
+  
+  .display-xl {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+  }
+  
+  .hero-title .line-serif {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+  }
+}
+
+/* ── MOBILE (Até 768px) ── */
+@media (max-width: 768px) {
+  #hero {
+    background-image: url('section mobile.png');
+    background-position: center top; 
+    align-items: flex-end;
+    padding-bottom: 7rem;
+  }
+  
+  #hero::before {
+    background-image: url('section mobile.png');
+    background-position: center top; 
+  }
+  
+  .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(5,7,15,0) 0%, rgba(5,7,15,0.6) 40%, var(--bg-base) 90%);
+  }
+  [data-theme="light"] .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(248,249,255,0) 0%, rgba(248,249,255,0.85) 40%, var(--bg-base) 90%);
+  }
+
+  .hero-content {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    /* Adiciona um respiro nas laterais para o texto não colar na tela */
+    padding: 0 1rem; 
+  }
+  
+  .hero-badge {
+    margin: 0 auto 1.5rem auto;
+  }
+  
+  /* ── AJUSTES DO TÍTULO ── */
+  .display-xl {
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem); 
+    line-height: 1.25;
+    word-wrap: break-word; /* Garante que palavras gigantes não vazem */
+  }
+  
+  .hero-title .line-serif {
+    font-size: clamp(1.3rem, 5vw, 1.6rem);
+  }
+
+  /* O SEGREDO: Esconde as quebras de linha do Desktop para o texto fluir naturalmente no celular */
+  .hero-title br {
+    display: none;
+  }
+  
+  .hero-sub {
+    margin: 0 auto 2rem auto;
+    font-size: 0.95rem; 
+    line-height: 1.5;
+    max-width: 100%; 
+  }
+  
+  .hero-ctas, .hero-chips {
+    justify-content: center;
+  }
+
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -518,29 +645,7 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
   border-color: var(--border-glow);
   background: var(--bg-elevated);
   transform: translateY(-2px);
-}
 
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  animation: float-scroll 3s ease-in-out infinite;
-}
-.hero-scroll-hint span {
-  color: #52a6ff;
-  animation: neonFlicker 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-}
-.hero-scroll-hint svg {
-  stroke: #52a6ff;
-  animation: neonFlickerIcon 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 @keyframes float-scroll {
   0%, 100% { transform: translateX(-50%) translateY(0); }
