@@ -86,6 +86,8 @@
 
 html { scroll-behavior: smooth; }
 
+img, svg { max-width: 100%; height: auto; display: block; }
+
 body {
   font-family: var(--font-sans);
   background: var(--bg-base);
@@ -175,6 +177,7 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
 
 /* ═══════════════════════════════════════════
    NAVBAR
@@ -690,6 +693,7 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
 .soft-pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gradient-btn); flex-shrink: 0; }
 
 @media (max-width: 900px) { .skills-grid { grid-template-columns: 1fr; } }
+@media (min-width: 601px) and (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ═══════════════════════════════════════════
    PROCESS / COMO TRABALHO
@@ -1564,6 +1568,22 @@ footer {
           <div class="skill-item-header"><span class="skill-name">Branding</span><span class="skill-pct">85%</span></div>
           <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
         </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Arquitetura da Informação</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Design de Interação</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Wireframes &amp; Prototipagem</span><span class="skill-pct">92%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Design Responsivo</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
       </div>
 
       <!-- Front-End -->
@@ -1619,6 +1639,45 @@ footer {
         <div class="skill-item">
           <div class="skill-item-header"><span class="skill-name">Git / GitHub</span><span class="skill-pct">85%</span></div>
           <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category reveal reveal-delay-4">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🛠️</div>
+          <div class="skill-cat-name">Ferramentas</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Adobe Photoshop</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Adobe Illustrator</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Adobe After Effects</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">WordPress</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Figma</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">Elementor</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">VS Code</span><span class="skill-pct">92%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-item-header"><span class="skill-name">IntelliJ IDEA</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
         </div>
       </div>
     </div>
@@ -1734,42 +1793,42 @@ footer {
       </div>
 
       <!-- Landing Page 5 — Inteligência Emocional -->
-      <div class="project-card reveal reveal-delay-1" data-category="landing">
+      <div class="project-card reveal reveal-delay-1" data-category="portifólio">
         <div class="project-thumb">
-          <div class="project-thumb-inner"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/a7e6cf243293085.Y3JvcCwxNDc2LDExNTUsMzE0LDA.png" alt="Landing page Inteligência Emocional" loading="lazy"></div>
+          <div class="project-thumb-inner"><img src="portifoloM.jpg" alt="Portifólio Marinha Do Brasil" loading="lazy"></div>
           <div class="project-overlay">
             <div class="project-overlay-content">
-              <a href="projeto-inteligencia-emocional.html" class="project-overlay-link">Ver projeto →</a>
+              <a href="portifoliomarinhadobraasil.html" class="project-overlay-link">Ver projeto →</a>
             </div>
           </div>
         </div>
         <div class="project-info">
           <div class="project-tags">
-            <span class="project-tag tag-design">Landing Page</span>
-            <span class="project-tag tag-design">Bem-estar</span>
+            <span class="project-tag tag-design">Portifólio</span>
+            <span class="project-tag tag-design">Institucional</span>
           </div>
-          <div class="project-title">Inteligência Emocional</div>
-          <div class="project-desc">Página acolhedora para projetos de inteligência emocional, com hierarquia tipográfica suave e jornada de leitura simplificada.</div>
+          <div class="project-title">Portifólio Marinha Do Brasil</div>
+          <div class="project-desc">Peça institucional em formato de portfólio, reunindo a missão, os programas e as ações de mentalidade marítima da Marinha do Brasil em uma narrativa visual única, pensada para divulgação digital e apresentações.</div>
         </div>
       </div>
 
       <!-- Card 1 -->
       <div class="project-card reveal" data-category="dev">
         <div class="project-thumb thumb-dev">
-          <div class="project-thumb-inner">🏗️</div>
+          <div class="project-thumb-inner"><img src="projetoMarinha.png" alt="Landing page Inteligência Emocional" loading="lazy"></div>
           <div class="project-overlay">
             <div class="project-overlay-content">
-              <a href="#" class="project-overlay-link">Ver projeto →</a>
+              <a href="cisneBranco.html" class="project-overlay-link">Ver projeto →</a>
             </div>
           </div>
         </div>
         <div class="project-info">
           <div class="project-tags">
-            <span class="project-tag tag-dev">Java</span>
-            <span class="project-tag tag-dev">Spring Boot</span>
+            <span class="project-tag tag-dev">Operação Cisne Branco</span>
+            <span class="project-tag tag-dev">Marinha do Brasil</span>
           </div>
-          <div class="project-title">Plataforma SaaS Agtech</div>
-          <div class="project-desc">API REST completa com autenticação JWT, multi-tenancy e módulo de rastreabilidade para o agronegócio.</div>
+          <div class="project-title">Operação Cisne Branco Marinha Do Brasil</div>
+          <div class="project-desc">A Operação Cisne Branco é um concurso escolar e projeto institucional promovido anualmente pela Marinha do Brasil em parceria com a SOAMAR (Sociedade de Amigos da Marinha). Ele é voltado para alunos do Ensino Fundamental II e Ensino Médio, com o objetivo de despertar nos jovens a consciência marítima e o conhecimento sobre a importância da "Amazônia Azul", da Marinha e do Poder Naval para a defesa e o desenvolvimento do país.</div>
         </div>
       </div>
 
@@ -1936,10 +1995,24 @@ footer {
       </div>
 
       <div class="timeline-item reveal reveal-delay-3">
-        <div class="timeline-date">2019 — 2021</div>
-        <div class="timeline-role">Designer Gráfico & UI Designer</div>
-        <div class="timeline-company">Agência Digital · Brasília, DF</div>
-        <div class="timeline-desc">Criação de identidades visuais, sistemas de design e interfaces para clientes de diversos segmentos. Uso intensivo de Adobe Creative Suite, Figma e metodologias de design centrado no usuário.</div>
+        <div class="timeline-date">2024 — Presente</div>
+        <div class="timeline-role">UX/UI Designer & Web Designer — Freelancer</div>
+        <div class="timeline-company">Freelance · Brasília, DF</div>
+        <div class="timeline-desc">Desenvolvimento de soluções de UX/UI para dashboards, sistemas web e aplicativos. Criação de páginas de vendas, websites e e-commerces com foco em conversão, aplicando Arquitetura da Informação, Design de Interação e Design Responsivo. Wireframes e prototipagem de alta fidelidade no Figma. Cerca de 25 projetos digitais entregues, com conversão média de 30–40% na captação de clientes, e gestão completa do processo de design do briefing à entrega.</div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-4">
+        <div class="timeline-date">2024</div>
+        <div class="timeline-role">Designer Gráfico Júnior</div>
+        <div class="timeline-company">Pro-Empresa · Campanhas Eleitorais</div>
+        <div class="timeline-desc">Desenvolvimento de identidades visuais e materiais estratégicos para candidatos. Direção criativa de peças digitais, impressas e mídia externa, com melhoria de até 40% na eficiência e qualidade dos materiais, sempre alinhados ao posicionamento estratégico de cada candidato.</div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-5">
+        <div class="timeline-date">2023 — 2024</div>
+        <div class="timeline-role">Estagiário de Design Gráfico</div>
+        <div class="timeline-company">Centro de Comunicação Social da Marinha do Brasil</div>
+        <div class="timeline-desc">Desenvolvimento de campanhas institucionais e materiais de Relações Públicas, com produção de peças para comunicação interna e externa. Participação em projetos institucionais estratégicos, com melhoria estimada de 70% na qualidade e padronização visual.</div>
       </div>
 
     </div>
