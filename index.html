@@ -319,6 +319,9 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
 /* ═══════════════════════════════════════════
    HERO
 ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
 #hero {
   min-height: 100svh;
   display: flex;
@@ -497,8 +500,8 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
    MEDIA QUERIES PARA ADAPTAÇÃO
 ═══════════════════════════════════════════ */
 
-/* ── TABLET (Até 1024px) ── */
-@media (max-width: 1024px) {
+/* ── 1. TABLET HORIZONTAL (Até 1100px) ── */
+@media (max-width: 1100px) {
   #hero, #hero::before { 
     background-image: url('sectiontablet.png');
     background-position: center right; 
@@ -528,90 +531,102 @@ body.cursor-hover .cursor-ring { width: 56px; height: 56px; border-color: var(--
   }
 }
 
-/* ── MOBILE (Até 768px) ── */
-@media (max-width: 768px) {
-  #hero {
-    background-image: url('sectionmobile.png'); 
-    background-position: center top; 
-    align-items: flex-end; 
-    padding-bottom: 5rem;
-  }
-  
-  #hero::before {
-    background-image: url('sectionmobile.png');
-    background-position: center top; 
-  }
-  
-  .hero-bg-overlay {
-    background: linear-gradient(180deg, rgba(5,7,15,0) 0%, rgba(5,7,15,0.7) 40%, var(--bg-base) 90%);
-  }
-  [data-theme="light"] .hero-bg-overlay {
-    background: linear-gradient(180deg, rgba(248,249,255,0) 0%, rgba(248,249,255,0.85) 40%, var(--bg-base) 90%);
+/* ── 2. TABLET VERTICAL / MOBILE GRANDE (Até 992px) ── */
+/* Quebra forçada para centralizar tudo e puxar a imagem vertical */
+@media (max-width: 992px) {
+  #hero, #hero::before {
+    background-image: url('sectiontabletvertical.png') !important; 
+    background-position: center top !important;
   }
 
-  /* O segredo para centralizar perfeitamente no Mobile */
+  #hero {
+    align-items: flex-end !important;
+    padding-bottom: 7rem !important;
+  }
+
+  .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(5,7,15,0) 0%, rgba(5,7,15,0.7) 40%, var(--bg-base) 90%) !important;
+  }
+  [data-theme="light"] .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(248,249,255,0) 0%, rgba(248,249,255,0.85) 40%, var(--bg-base) 90%) !important;
+  }
+
   .hero-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
   }
 
   .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 0; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
   }
-  
+
   .hero-badge {
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.5rem 0 !important;
   }
-  
-  /* Fonte ligeiramente reduzida para não vazar a tela e forçar centralização */
+
   .display-xl {
-    font-size: clamp(1.4rem, 6.5vw, 1.8rem) !important; 
-    line-height: 1.25 !important;
-    white-space: normal !important; 
-    word-wrap: break-word; 
-    width: 100%; 
+    font-size: clamp(2rem, 6vw, 3rem) !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
   }
-  
+
+  .hero-title .line-serif {
+    display: block !important;
+  }
+
+  .hero-sub {
+    margin: 1.5rem 0 2rem 0 !important;
+    max-width: 100% !important;
+  }
+
+  .hero-ctas, .hero-chips {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .hero-tags {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+  }
+}
+
+/* ── 3. MOBILE (Celulares - Até 768px) ── */
+@media (max-width: 768px) {
+  #hero, #hero::before {
+    background-image: url('sectionmobile.png') !important;
+  }
+
+  #hero {
+    padding-bottom: 5rem !important;
+  }
+
+  .hero-content {
+    padding: 0 1.5rem !important;
+  }
+
+  .display-xl {
+    font-size: clamp(1.4rem, 6.5vw, 1.8rem) !important;
+    line-height: 1.25 !important;
+  }
+
   .hero-title .line-serif {
     font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
-    display: inline;
   }
 
-  /* Mantém as quebras da frase originais */
-  .hero-title br {
-    display: block; 
-  }
-  
   .hero-sub {
-    margin: 1.5rem 0 2rem 0;
-    font-size: 0.9rem !important; 
-    line-height: 1.5 !important;
-    max-width: 100%; 
+    font-size: 0.9rem !important;
   }
-  
-  /* Centraliza botões e chips de tecnologia perfeitamente */
-  .hero-ctas, .hero-chips {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  /* Expande a barra de rolagem infinita de ponta a ponta no celular */
-  .hero-tags {
-    width: 100vw; 
-    margin-left: calc(-50vw + 50%); 
-  }
-
 
 }
 .btn-primary {
