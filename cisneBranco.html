@@ -54,6 +54,8 @@ main{position:relative; z-index:1;}
 .proj-body h2{font-size:1.5rem; margin-bottom:16px; margin-top:44px;}
 .proj-body h2:first-child{margin-top:0;}
 .proj-body p{color:var(--text-muted); font-weight:300; font-size:1rem; margin-bottom:14px;}
+.proj-body p.stack-line{margin-top:28px; padding-top:20px; border-top:1px solid var(--border); color:var(--text); font-size:0.9rem;}
+.proj-body p.stack-line strong{color:var(--blue-2); font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:0.03em; margin-right:6px;}
 .proj-cta-row{display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;}
 .btn{padding:14px 28px; border-radius:100px; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:600;
   display:inline-flex; align-items:center; gap:8px; transition:all .25s;}
@@ -84,18 +86,18 @@ footer a:hover{color:var(--blue-2);}
 <header>
   <a class="logo" href="index.html">GUILHERME<span>.</span>PEREIRA</a>
   <nav>
-    <a class="nav-link" href="index.html#work">← <span data-i18n="nav.back">Operação</span></a>
+    <a class="nav-link" href="index.html#work">← <span data-i18n="nav.back">Portfólio</span></a>
     <button id="langToggle">EN</button>
   </nav>
 </header>
 <main>
   <div class="proj-hero" data-reveal>
-    <div class="eyebrow"><span data-i18n="tag">Operação Cisne Branco</span></div>
-    <h1 data-i18n="hero.title">Operação Cisne Branco</h1>
-    <p class="sub" data-i18n="hero.sub">Projeto estrategico da operação Cisne Branco.</p>
+    <div class="eyebrow"><span data-i18n="tag">Branding & Visual Identity</span></div>
+    <h1 data-i18n="hero.title">Operação Cisne Branco & SOAMAR 2024</h1>
+    <p class="sub" data-i18n="hero.sub">Identidade visual, key visuals e aplicação de marca em vestuário institucional para campanhas da Marinha do Brasil.</p>
     <div class="proj-meta-row">
-      <div><span class="k" data-i18n="meta.k1">Apreciações</span><span class="v" data-i18n="meta.v1">53</span></div>
-      <div><span class="k" data-i18n="meta.k2">Categoria</span><span class="v" data-i18n="meta.v2">Operação</span></div>
+      <div><span class="k" data-i18n="meta.k1">Apreciações</span><span class="v" data-i18n="meta.v1">34</span></div>
+      <div><span class="k" data-i18n="meta.k2">Categoria</span><span class="v" data-i18n="meta.v2">Branding / Visual Identity</span></div>
     </div>
   </div>
 
@@ -106,7 +108,7 @@ footer a:hover{color:var(--blue-2);}
   </div>
 
   <div class="proj-body" data-reveal>
-    <div data-i18n="body"><h2>Sobre o projeto</h2><p>Desenvolvimento de projeto gráfico e aplicação de marca para a Operação Cisne Branco, iniciativa promovida pela Marinha do Brasil em parceria com a SOAMAR. O projeto abrange a criação de peças digitais, banners institucionais e vestuário personalizado, combinando estética tecnológica e elementos marítimos para fortalecer a presença visual da operação.</p><h2>Direção de design</h2><p>Design de interface e layout voltado a divulgação do concurso Operação Cisne branco da Marinha do Brasil.</p></div>
+    <div data-i18n="body"><h2>Desafio</h2><p>Fortalecer a presença visual da Operação Cisne Branco e do SOAMAR 2024, iniciativas da Marinha do Brasil em parceria com a SOAMAR, unificando peças digitais, banners institucionais e vestuário personalizado sob uma identidade visual coesa.</p><h2>Processo</h2><p>Definição de uma linguagem visual que combinasse elementos cibernéticos em azul-neon nas peças digitais com um design limpo e sofisticado nos uniformes e produtos institucionais. Criação de key visuals e aplicação da identidade em mockups de vestuário e materiais de divulgação do concurso.</p><h2>Resultado</h2><p>Identidade visual coesa aplicada em múltiplos formatos — digital e físico — reunindo 34 apreciações no Behance.</p><p class="stack-line"><strong>Stack:</strong> Figma · Illustrator · Photoshop · Identidade visual</p></div>
     <div class="proj-cta-row">
       <a class="btn btn-primary" href="https://www.behance.net/gallery/243293085/Landing-page-para-projetos-de-inteligencia-emocional" target="_blank" rel="noopener" data-i18n="cta1">Ver no Behance</a>
       <a class="btn btn-ghost" href="index.html#work" data-i18n="cta2">Voltar ao portfólio</a>
@@ -162,7 +164,7 @@ const i18n = {
     "meta.v2": "Branding / Visual Identity",
     "cta1": "Ver no Behance",
     "cta2": "Voltar ao portfólio",
-    "body": "<h2>Sobre o projeto</h2><p>Desenvolvimento completo de identidade visual, key visuals institucionais e mockups de vestuário para os projetos Operação Cisne Branco 2024 e SOAMAR 2024 da Marinha do Brasil.</p><h2>Direção de design</h2><p>Combinação de elementos cibernéticos em azul-neon para as peças digitais com um design limpo e sofisticado na linha de produtos e uniformes institucionais.</p>",
+    "body": "<h2>Desafio</h2><p>Fortalecer a presença visual da Operação Cisne Branco e do SOAMAR 2024, iniciativas da Marinha do Brasil em parceria com a SOAMAR, unificando peças digitais, banners institucionais e vestuário personalizado sob uma identidade visual coesa.</p><h2>Processo</h2><p>Definição de uma linguagem visual que combinasse elementos cibernéticos em azul-neon nas peças digitais com um design limpo e sofisticado nos uniformes e produtos institucionais. Criação de key visuals e aplicação da identidade em mockups de vestuário e materiais de divulgação do concurso.</p><h2>Resultado</h2><p>Identidade visual coesa aplicada em múltiplos formatos — digital e físico — reunindo 34 apreciações no Behance.</p><p class=\"stack-line\"><strong>Stack:</strong> Figma · Illustrator · Photoshop · Identidade visual</p>",
     "nav.prev.dir": "Anterior",
     "nav.prev.name": "Portifólio Marinha Do Brasil",
     "nav.next.dir": "Próximo",
@@ -179,7 +181,7 @@ const i18n = {
     "meta.v2": "Branding / Visual Identity",
     "cta1": "View on Behance",
     "cta2": "Back to portfolio",
-    "body": "<h2>About the project</h2><p>Full development of visual identity, institutional key visuals, and apparel mockups for the Brazilian Navy's Operation Cisne Branco 2024 and SOAMAR 2024 projects.</p><h2>Design direction</h2><p>A blend of cyan-neon cybernetic elements for digital assets with a clean, sophisticated touch for official apparel and merchandise.</p>",
+    "body": "<h2>Challenge</h2><p>Strengthen the visual presence of Operation Cisne Branco and SOAMAR 2024, Brazilian Navy initiatives run in partnership with SOAMAR, unifying digital assets, institutional banners and custom apparel under one cohesive visual identity.</p><h2>Process</h2><p>Defined a visual language blending cyan-neon cybernetic elements for digital assets with a clean, sophisticated look for uniforms and institutional products. Created key visuals and applied the identity across apparel mockups and contest promotional materials.</p><h2>Result</h2><p>A cohesive visual identity applied across multiple formats — digital and physical — gathering 34 appreciations on Behance.</p><p class=\"stack-line\"><strong>Stack:</strong> Figma · Illustrator · Photoshop · Visual identity</p>",
     "nav.prev.dir": "Previous",
     "nav.prev.name": "Brazilian Navy Portfolio",
     "nav.next.dir": "Next",
